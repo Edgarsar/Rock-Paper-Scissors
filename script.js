@@ -16,7 +16,7 @@ const SELECTIONS = [
     emoji: '✌',
     beats: 'paper'
   }
-]
+];
 
 selectionButtons.forEach(selectionButton => {
   selectionButton.addEventListener('click', e => {
