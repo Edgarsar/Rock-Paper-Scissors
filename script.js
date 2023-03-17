@@ -21,10 +21,20 @@ const SELECTIONS = [
 selectionButtons.forEach(selectionButton => {
   selectionButton.addEventListener('click', e => {
     const selectionName = selectionButton.dataset.selection;
-    makeSelection(selectionName);
+    const selection = SELECTIONS.find(selection => selection.name === selectionName);
+    makeSelection(selection);
   });
 });
 
 function makeSelection(selection) {
-  console.log(selection);
+  const computerSelection = randomSelection();
+  console.log(computerSelection);
 }
+
+
+
+function randomSelection() {
+  const randomIndex = Math.floor(Math.random() * SELECTIONS.length);
+  return SELECTIONS[randomIndex];
+}
+
